@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guided Terminal Assembly Station</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../../Planning.css" />
+  <body>
+    <div class="main-content">
+      <div class="header">
+        <div class="">
+          <img src="../logo.png" alt="Logo" />
+        </div>
+        <div class="text-center">
+          <h1 id="pageTitle" class="pageTitle"></h1>
+        </div>
+        <div class="actions">
+          <div class="button-container">
+            <div class="row">
+              <button id="buttons1" class="button button-static"></button>
+              <button id="buttons2" class="button button-static"></button>
+            </div>
+            <div class="row">
+              <button id="buttons3" class="button"></button>
+              <button id="buttons4" class="button"></button>
+            </div>
+          </div>
+          <div class="image-container">
+            <button class="user-button">
+              <img src="../user-icon.png" alt="Image" />
+            </button>
+            <p  id="onButton"></p>
+            <p  id="offButton"></p>
+          </div>
+          <div class="close">
+            <button class="close-button">x</button>
+          </div>
+        </div>        
+      </div>
+        </body>
+        </html>
+        
+<div class="module-windowpl">  
+   <div class="grid-container-planning">
+
+     <div class="grid-item-planning" >
+      <h1>Select Line</h1>
+      <div >
+        <ul id="folderList" class="folder-list"></ul> 
+       
+      </div>
+     </div>
+
+     <div class="grid-item-planning">
+      <h1>Select Machine</h1>
+      <ul id="MachineList" class="folder-list"> </ul>
+     </div>
+
+     <div class="grid-item-planning">
+      <h1>Select Process</h1>
+      <div>       
+        <ul id="ProcessList" class="folder-list"></ul> 
+      </div>
+      </div>
+
+     <div class="grid-item-planning">
+      <h1>Select Shift</h1>
+      <div>
+        <ul class="folder-list-shift">
+          <li><input type="radio" name="shift" value="A"><label >A</label></li>
+          <li><input type="radio" name="shift" value="B"><label >B</label></li>
+          <li><input type="radio" name="shift" value="C"><label >C</label></li>
+          <li><input type="radio" name="shift" value="D"><label >D</label></li>
+        </ul>
+      <input type="date" id="selected-date">
+
+   <!--    <ul class="folder-list-process">
+        <li><input type="radio" name="process" value="navigator-with-sensor"><label >Nav With Sensor</label></li>
+        <li><input type="radio" name="process" value="navigator-without-sensor"><label >Nav Without Sensor</label></li>
+        <li><input type="radio" name="process" value="bonder"><label >Bonder</label></li>
+      </ul> -->
+      </div>
+     </div>
+
+<div class="grid-container-planning">
+  <div class="cont">
+  <button onclick="sendToDatabase()" ><img class="itemg" src="../../images/right-arrow.png" width="20px" alt="Button Right"></button>
+  <br>
+<button id="delete-row" disabled><img class="itemg" src="../../images/left-arrow.png"  width="20px" alt="Button Left" ></button>
+</div>
+</div>
+
+     <div class="grid-item-planning">
+      <h1>Planning Details</h1>
+      <div class="Table-container">
+      <table id="dataTable">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>Date</th>
+            <th>Line Name</th>
+            <th>Process</th>
+            <th>Seq</th>
+            <th>Target</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+     </div>
+   </div>
+
+   <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-seq">&times;</span>
+        <p>Enter Sequence Number</p>
+        <input type="number" id="seqInput">
+        <button class="OkButton" id="okBtn">OK</button>
+    </div>
+</div>
+
+<div id="targetModal" class="custom-modal">
+  <div class="custom-modal-content">
+      <span class="close-custom-modal" id="close-target">&times;</span>
+      <p>Enter Target</p>
+      <input type="number" id="targetInput">
+      <button class="OkButton" id="okTargetBtn">OK</button>
+  </div>
+</div>
+
+
+<div id="remarksModal" class="remarks-modal">
+  <div class="remarks-modal-content">
+      <span class="close-remarks-modal" id="close-remarks">&times;</span>
+      <p>Enter Remarks</p>
+      <input type="text" id="remarksInput">
+      <button class="OkButton" id="okRemarksBtn">OK</button>
+  </div>
+</div>
+
+    <a href="../index.html">     
+    <button style="font-size: 30px; border-radius: 5px; transform: translateX(962px);" class="anim-button" >Close</button></a> 
+</div>
+           
+      <div class="module-actions">
+        <div class="start-action">
+       <button class="button button-start">Start</button>
+         <button class="button-green">Pause</button>
+         <button class="button-yellow">Reset</button> 
+          
+        </div>
+        <div class="settings-action">
+          <button class="button button-settings">    
+          </button>
+        </div>
+      </div>
+  </body>
+<!--   <script src="Processnames.js"></script> -->
+  <script src="Processnames.js"></script>
+  <scipt src="index.js"></scipt>
+  <script src="Planning.js"></script>
+
+<script>
+
+let selectedDate;
+let selectedRowId = null;
+let selectedRow = null;
+let selectedShift;
+document.addEventListener('DOMContentLoaded', (event) => {
+  event.preventDefault();
+    const radioList = document.querySelectorAll('.folder-list-shift input[type="radio"]');
+    radioList.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                console.log(`Radio button selected: ${radio.value}`);
+                selectedShift = radio.value; // Set global variable
+                updateTable();
+            }
+        });
+    });
+});
+
+  const planningTableBody = document.getElementById('dataTable').querySelector('tbody');
+  const deleteButton = document.getElementById('delete-row');
+  const sendButton = document.getElementById('send-row');
+  deleteButton.disabled = true;
+
+  const seqModal = document.getElementById('modal');
+  const seqInput = document.getElementById('seqInput');
+  const okSeqBtn = document.getElementById('okBtn');
+  const closeSeq = document.getElementById('close-seq');
+ 
+  const targetModal = document.getElementById('targetModal');
+  const targetInput = document.getElementById('targetInput');
+  const okTargetBtn = document.getElementById('okTargetBtn');
+  const closeTarget = document.getElementById('close-target');
+
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-based
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  }
+
+  function updateTable() {
+    console.log(selectedDate)
+  fetch(`http://localhost:8000/Planning?date=${selectedDate}&lineName=${selectedFolder}&shift=${selectedShift}`)
+    .then(response => response.json())
+    .then(data => {
+      //data.sort((a, b) => b.ID - a.ID);
+      data.sort((a, b) => {
+        if (a.Seq === b.Seq) {
+          return 0;
+        } else if (a.Seq < b.Seq) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+      planningTableBody.innerHTML = ''; // Clear existing rows
+      data.forEach((row, index) => {
+        const newRow = planningTableBody.insertRow();
+        newRow.insertCell().textContent = index + 1;
+        newRow.insertCell().textContent = formatDate(row.Date);
+        newRow.insertCell().textContent = row.LineName;
+        newRow.insertCell().textContent = row.Process;
+
+        const seqCell = newRow.insertCell();
+          seqCell.textContent = row.Seq;
+
+        const targetCell = newRow.insertCell();
+          targetCell.textContent = row.Target;
+
+        const remarkCell = newRow.insertCell();
+          remarkCell.textContent = row.Remark;
+
+          seqCell.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            seqModal.style.display = 'block';
+            seqInput.value = row.Seq;
+
+            // Clear previous input handler
+            seqInput.oninput = null;
+            seqInput.oninput = () => {
+              seqCell.textContent = seqInput.value;
+            };
+
+            // Clear previous OK button handler
+            okSeqBtn.onclick = null;
+            okSeqBtn.onclick = () => {
+              const updatedSeq = seqInput.value.trim();
+              fetch(`http://localhost:8000/Planning/patchData/${row.ID}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Seq: updatedSeq }),
+              })
+                .then(response => response.json())
+                .then(data => {
+                  console.log(`Updated Seq to ${updatedSeq} and Row ID ${row.ID}`);
+                  updateTable();
+                })
+                .catch(error => console.error('Error updating Seq:', error));
+              seqModal.style.display = 'none';
+            };
+
+            // Clear previous close button handler
+            closeSeq.onclick = null;
+            closeSeq.onclick = () => {
+              seqModal.style.display = 'none';
+            };          
+          });
+
+          targetCell.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            targetModal.style.display = 'block';
+            targetInput.value = row.Target;
+
+            // Clear previous input handler
+            targetInput.oninput = null;
+            targetInput.oninput = () => {
+              targetCell.textContent = targetInput.value;
+            };
+
+            // Clear previous OK button handler
+            okTargetBtn.onclick = null;
+            okTargetBtn.onclick = () => {
+              const updatedTarget = targetInput.value.trim();
+              fetch(`http://localhost:8000/Planning/patchData/${row.ID}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Target: updatedTarget }),
+              })
+                .then(response => response.json())
+                .then(data => {
+                  console.log(`Updated Target to ${updatedTarget} and Row ID ${row.ID}`);
+                  updateTable();
+                })
+                .catch(error => console.error('Error updating Target:', error));
+              targetModal.style.display = 'none';
+            };
+
+            // Clear previous close button handler
+            closeTarget.onclick = null;
+            closeTarget.onclick = () => {
+              targetModal.style.display = 'none';
+            }; });
+
+            remarkCell.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            remarkModal.style.display = 'block';
+            remarkInput.value = row.Remark;
+
+            // Clear previous input handler
+            remarkInput.oninput = null;
+            remarkInput.oninput = () => {
+              remarkCell.textContent = remarkInput.value;
+            };
+
+            // Clear previous OK button handler
+            okRemarkBtn.onclick = null;
+            okRemarkBtn.onclick = () => {
+              const updatedRemark = remarkInput.value.trim();
+              fetch(`http://localhost:8000/Planning/patchData/${row.ID}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Remark: updatedRemark }),
+              })
+                .then(response => response.json())
+                .then(data => {
+                  console.log(`Updated Remark to ${updatedRemark} and Row ID ${row.ID}`);
+                  updateTable();
+                })
+                .catch(error => console.error('Error updating Remark:', error));
+              remarkModal.style.display = 'none';
+            };
+
+            // Clear previous close button handler
+            closeRemarks.onclick = null;
+            closeRemarks.onclick = () => {
+              remarkModal.style.display = 'none';
+            };
+          });
+          newRow.addEventListener('click', function() {
+          this.style.backgroundColor = 'red';
+          deleteButton.disabled = false;
+          selectedRowId = row.ID;
+          selectedRow = row;
+          //console.log(`Row with ID ${selectedRowId} was clicked`);
+        });
+
+        newRow.addEventListener('contextmenu', function() {
+          this.style.backgroundColor = '';
+          deleteButton.disabled = true;
+        });
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+function sendToDatabase() {
+   const selectedOptions = {
+    LineName: selectedFolder,
+    System: selectedMachine,
+    Process: selectedFile,
+    Shift: selectedShift,
+    Date: selectedDate,
+  }; 
+    fetch('http://localhost:8000/Planning', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ options: selectedOptions })
+  })
+    .then(response => response.text())
+    .then(data => {
+      console.log('Options sent successfully!');
+      updateTable();
+    })
+    .catch(error => console.error('Error sending options:', error));
+    updateTable();
+  //clearRadioButtons(); 
+  updateTable();
+}
+function clearRadioButtons() {
+  const radioList = document.querySelectorAll('input[type="radio"]');
+  radioList.forEach(radio => {
+    radio.checked = false;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const dateInput = document.getElementById('selected-date');
+ 
+  dateInput.addEventListener('change', () => {
+    selectedDate = dateInput.value;
+    //console.log(`Selected date: ${selectedDate}`);
+    updateTable();
+  });
+
+});
+
+deleteButton.addEventListener('click', () => {
+    if (selectedRowId) {
+      fetch(`http://localhost:8000/Planning/Delete/${selectedRowId}`, {
+        method: 'DELETE',
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            //console.log(`Row with ID ${selectedRowId} deleted successfully`);
+            deleteButton.disabled = true;
+            updateTable(); // Update the table after deletion
+          } else {
+            console.error(`Error deleting row with ID ${selectedRowId}:`, data.error);
+          }
+        })
+        .catch(error => console.error(`Error deleting row with ID ${selectedRowId}:`, error));
+    }
+  });
+
+      
+</script>
+
+</html>

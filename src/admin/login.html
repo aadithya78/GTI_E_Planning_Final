@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login</title>
+        <link
+            rel="stylesheet"
+            href="./login.css" />
+    </head>
+    <body>
+        <main class="page">
+            <section id="empty"></section>
+            <section id="login-form-wrap">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <p>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Username"
+                            required
+                            autofocus />
+                        <span
+                            class="hide"
+                            id="invalidUsername"
+                            >Invalid Username!</span
+                        >
+                    </p>
+                    <p>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                            required />
+                        <span
+                            class="hide"
+                            id="invalidPassword"
+                            >Invalid Password!</span
+                        >
+                    </p>
+                    <p>
+                        <input
+                            type="button"
+                            class="submit"
+                            id="submit"
+                            value="Login" />
+                    </p>
+                </form>
+            </section>
+        </main>
+
+        <script src="login.js"></script>
+    </body>
+</html>

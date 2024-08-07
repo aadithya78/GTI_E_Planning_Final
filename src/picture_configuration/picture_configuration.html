@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Yazaki Guided Terminal Assembly Station</title>
+    </head>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="./picture_configuration.css" />
+    <body>
+        <div class="main-content">
+            <div class="header">
+                <div class="">
+                    <img
+                        src="../logo.png"
+                        id="logo"
+                        alt="Logo" />
+                </div>
+                <div class="text-center">
+                    <h1
+                        id="pageTitle"
+                        class="pageTitle"></h1>
+                </div>
+                <div class="actions">
+                    <div class="button-container">
+                        <div class="row">
+                            <button
+                                id="currentDate"
+                                class="button button-static"></button>
+                            <button
+                                id="currentTime"
+                                class="button button-static"></button>
+                        </div>
+                        <div class="row">
+                            <button
+                                id="user"
+                                class="button"></button>
+                            <button
+                                id="shift-button"
+                                class="button">
+                                Shift -
+                                <span id="shift">X</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <button class="user-button">
+                            <img
+                                src="../user-icon.png"
+                                height="70"
+                                id="userImage"
+                                alt="Image" />
+                        </button>
+                    </div>
+                    <div class="close">
+                        <button
+                            onclick="window.close()"
+                            id="close"
+                            class="close-button">
+                            x
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="module-windowpic containers">
+                <div class="big-row">
+                    <p id="error">Please Enter the Pin Name</p>
+                    <canvas
+                        width="1660"
+                        height="550"
+                        class="canvas-image"></canvas>
+                    <div class="small-row">
+                        <div class="container">
+                            <div
+                                class="row"
+                                style="display: flex; flex-wrap: wrap">
+                                <div
+                                    class="column"
+                                    style="width: 700px">
+                                    <div class="row">
+                                        <div>
+                                            <label for="folderName">Folder Name</label>
+                                            <select
+                                                style="width: 150px"
+                                                id="folderName"></select>
+                                        </div>
+                                        <div style="margin-left: 2rem">
+                                            <label
+                                                style="margin-right: 3rem"
+                                                for="imageName"
+                                                >Image Name</label
+                                            >
+                                            <select
+                                                style="width: 130px"
+                                                id="imageName"></select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label for="totalPins">Total pins</label>
+                                        <input
+                                            type="number"
+                                            disabled
+                                            id="totalPins"
+                                            style="width: 48%" />
+                                        <input
+                                            type="color"
+                                            id="textColor"
+                                            class="text-color"
+                                            value="#000000" />
+                                    </div>
+
+                                    <div class="row">
+                                        <label for="selectPin">Select pin</label>
+                                        <div style="display: flex; justify-content: flex-start; gap: 1rem">
+                                            <select
+                                                id="selectPin"
+                                                style="width: 145px"></select>
+                                            <input
+                                                placeholder="Pin Name"
+                                                style="width: 9rem"
+                                                id="pinName" />
+                                            <select
+                                                id="textSize"
+                                               ></select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="column"
+                                    style="width: 700px">
+                                    <div class="row">
+                                        <label
+                                            style="margin-right: 5rem"
+                                            for="pointerColor"
+                                            >Circle color</label
+                                        >
+                                        <input
+                                            type="color"
+                                            id="circleColor1"
+                                            style="width: 200px" />
+                                        <input
+                                            type="color"
+                                            id="circleColor2"
+                                            style="width: 200px" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label for="pointerSize">Pointer size</label>
+                                        </div>
+                                        <div class="column">
+                                            <input
+                                                type="range"
+                                                id="pointerSize"
+                                                min="1"
+                                                max="70" />
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="column">
+                                            <label for="deletePoint">Delete point</label>
+                                        </div>
+                                        <div class="column">
+                                            <select id="disablePoint"></select>
+                                        </div>
+                                        <div class="column">
+                                            <button id="deleteButton">Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="square-container"
+                                    style="box-shadow: 1px 1px 1px #020000">
+                                    <div class="ring-container">
+                                        <canvas id="previewCircle"></canvas>
+                                    </div>
+                                </div>
+
+                                <div class="row"></div>
+
+                                <div
+                                    class="row"
+                                    style="justify-content: center; align-items: center">
+                                    <div class="column">
+                                        <button
+                                            id="saveButton"
+                                            style="font-size: large">
+                                            Save
+                                        </button>
+                                    </div>
+                                    <div class="column">
+                                        <button
+                                            id="close"
+                                            onclick="window.location.href='../index.html';"
+                                            style="font-size: large">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="pictureConfiguration.js"></script>
+</html>

@@ -1,0 +1,139 @@
+<html>
+    <link
+        rel="stylesheet"
+        href="test.css" />
+    <body>
+        <div class="test-container">
+            <div class="table-container">
+                <table
+                    class="bin-table"
+                    id="conTable">
+                    <thead class="table-thead">
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>ST</th>
+                            <th>Connector Check</th>
+                            <th>LED Check</th>
+                            <th>LED Number</th>
+                        </tr>
+                    </thead>
+                    <tbody id="conTableTbody"></tbody>
+                </table>
+                <div class="bin-table-div">
+                    <div
+                        id="tabs"
+                        class="tabs">
+                        <span id="tab-A">A</span>
+                        <span id="tab-B">B</span>
+                        <span id="tab-C">C</span>
+                        <span id="tab-D">D</span>
+                    </div>
+                    <table
+                        class="bin-table"
+                        id="binTable">
+                        <thead class="table-thead">
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>ST</th>
+                                <th>IR Check</th>
+                            </tr>
+                        </thead>
+                        <tbody id="binTableTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="values-container">
+                <label class="label">
+                    Double Bin:
+                    <input
+                        type="checkbox"
+                        id="doubleBin" />
+                </label>
+                <span></span>
+                <label class="label">Connectors:</label>
+                <input
+                    type="number"
+                    min="0"
+                    value="0"
+                    class="select-desk-input"
+                    id="connectors" />
+                <label class="label">Bin A</label>
+                <span>
+                    <input
+                        type="number"
+                        min="0"
+                        value="0"
+                        class="select-desk-input"
+                        id="binANumbers" />
+                    <button
+                        class="activeButtons sequence-test"
+                        data-bin="A">
+                        Test Sequence
+                    </button>
+                </span>
+                <label class="label">Bin B:</label>
+                <span>
+                    <input
+                        type="number"
+                        min="0"
+                        value="0"
+                        class="select-desk-input"
+                        id="binBNumbers" />
+                    <button
+                        class="activeButtons sequence-test"
+                        data-bin="B">
+                        Test Sequence
+                    </button>
+                </span>
+                <label class="label">Bin C:</label>
+                <span>
+                    <input
+                        type="number"
+                        min="0"
+                        value="0"
+                        class="select-desk-input"
+                        id="binCNumbers" />
+                    <button
+                        class="activeButtons sequence-test"
+                        data-bin="C">
+                        Test Sequence
+                    </button>
+                </span>
+                <label class="label">Bin D:</label>
+                <span>
+                    <input
+                        type="number"
+                        class="select-desk-input"
+                        value="0"
+                        min="0"
+                        id="binDNumbers" />
+                    <button
+                        class="activeButtons sequence-test"
+                        data-bin="D">
+                        Test Sequence
+                    </button>
+                </span>
+                <span class="buttons">
+                    <button
+                        id="uploadConfig"
+                        class="activeButtons">
+                        Upload Config
+                    </button>
+                    <button
+                        id="resetButton"
+                        class="activeButtons">
+                        Reset
+                    </button>
+                    <button
+                        id="closeButton"
+                        class="activeButtons">
+                        Close
+                    </button>
+                </span>
+            </div>
+        </div>
+        <script src="test.js"></script>
+    </body>
+</html>

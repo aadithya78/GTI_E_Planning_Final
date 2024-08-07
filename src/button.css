@@ -1,0 +1,127 @@
+.button {
+    height: 2rem;
+    border-radius: 10px;
+    transition: all 0.25s ease-in-out;
+}
+
+.yellow-button {
+    background-color: yellow;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.red-button {
+    background-color: red;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+}
+
+.green-button {
+    background-color: green;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 50%;
+}
+
+.main-button {
+    background-color: yellow;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    width: 10rem;
+}
+
+.checkbox-slider:checked + .slider {
+    background-color: #27ae60;
+}
+
+.checkbox-slider:focus + .slider {
+    box-shadow: 0 0 1px #27ae60;
+}
+
+.checkbox-slider:checked + .slider:before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(15px);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+.switch .checkbox-slider {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.arrow-button {
+    width: 2rem;
+    background-color: #eecbb5;
+    border: none;
+    /* padding-top: 5px; */
+    /* padding-bottom: 2.5rem; */
+    padding: 0rem 0rem 2.5rem 0rem;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: x-large;
+    color: #ea742c;
+}
+
+#logout {
+    background-color: #ea742c;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    width: 5rem;
+    margin: 1.5rem;
+}
+
+#close {
+    width: 2rem;
+    text-align: center;
+    vertical-align: middle;
+}

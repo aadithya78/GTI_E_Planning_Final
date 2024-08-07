@@ -1,0 +1,805 @@
+html {
+    zoom: 0.8;
+    overflow: hidden;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.main-content {
+    display: grid;
+
+    gap: 0px;
+    background: #80fffe;
+}
+
+.header {
+    background: linear-gradient(#10659b, #62abce, #afeefc);
+    padding: 12px;
+    border-radius: 10px;
+    border: #307b8f 2px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header img {
+    max-width: 160px;
+}
+
+.header .pageTitle {
+    text-transform: uppercase;
+    color: #01007c;
+    font-size: 28px;
+    font-weight: 700;
+    font-weight: black;
+}
+
+@media (max-width: 1024px) {
+    .header .pageTitle {
+        font-size: 20px;
+    }
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0 10px;
+}
+
+.actions .button {
+    background: linear-gradient(#aceaff, #2061bf);
+    color: black;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.actions .button:hover {
+    background: linear-gradient(#2061bf, #aceaff);
+}
+
+.actions .button.button-static:hover {
+    background: linear-gradient(#aceaff, #2061bf);
+    cursor: default;
+}
+
+.user-button {
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-15%);
+}
+
+.button-container .row {
+    display: flex;
+    width: 130%;
+}
+
+.button-container .button {
+    width: 120%;
+}
+
+.close {
+    height: 100%;
+}
+
+.close-button {
+    background: linear-gradient(#dfa6a7, #c50a00c7, #c50801);
+    border: none;
+    color: #eeaba9;
+    height: fit-content;
+    padding: 5px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border: #490c2f 2px solid;
+    border-radius: 10px;
+    transform: translateY(15px);
+}
+
+.close-button:hover {
+    background: linear-gradient(#c50801, #d70900, #dfa6a7);
+    color: #dfa6a7;
+}
+
+.button-pause {
+    display: grid;
+}
+
+.image-container img {
+    width: 70px;
+    height: 100%;
+    max-height: 80px;
+    background: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.navbar-column {
+    display: grid;
+    flex-direction: column;
+    gap: 10px 0;
+}
+
+.navbar-value {
+    display: grid;
+    gap: 0 6px;
+}
+
+.navbar-item {
+    display: grid;
+    gap: 0 20px;
+    row-gap: 10px;
+}
+
+.flex-row {
+    display: grid;
+    flex-direction: row;
+}
+.grid-container {
+    display: grid;
+    gap: 10px;
+}
+
+.navbar-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10;
+}
+
+.dropdown {
+    padding: 0px 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 180px;
+    height: 34px;
+    justify-content: flex-end;
+    transform: translateX(3%);
+}
+
+.navbar {
+    background: #10669f;
+    border: 1px solid #c0c0c0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 40px;
+    padding: 8px 20px;
+}
+.target {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateX(270%);
+    right: 0;
+}
+@media (max-width: 1280px) {
+    .navbar {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        grid-template-columns: 1fr;
+        gap: 20px 0px;
+    }
+}
+
+.navbar-key {
+    /* background: linear-gradient(#fffd09, #dcde03, #b8b600, #7c7e03); */
+    font-size: 16px;
+    padding: 10px 0px;
+    font-weight: bold;
+    border-radius: 10px;
+    max-width: 100%;
+
+    text-align: center; /* Center the text horizontally */
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center;
+}
+
+.navbar-value {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 5px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.button-red {
+    background: linear-gradient(180deg, #ffc4cb, #ff5f74);
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    height: fit-content;
+    padding: 6px 2px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.button-red:hover {
+    background: linear-gradient(180deg, #ff5f74, #ffc4cb);
+    border: 2px solid #ff5f74; /* Keep the border color the same on hover */
+}
+
+.button-blue {
+    background: #9ac0f1;
+    border: 2px solid #3e72ff;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    height: fit-content;
+    padding: 6px 2px;
+    border-radius: 10px;
+}
+
+.button-blue:hover {
+    background: #377eb9;
+    border: 2px solid #110f80;
+}
+
+.button-yellow {
+    background: #fdf9d2;
+    border: 2px solid #fff34b;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    height: fit-content;
+    padding: 6px 2px;
+    border-radius: 10px;
+}
+.button-yellow:hover {
+    background: #deff67;
+    border: 2px solid #c4c707;
+}
+
+.button-yellow-big {
+    background: #fdee65;
+    border: 2px solid #d6c801;
+    color: #000000;
+    font-weight: 600;
+    font-size: 35px;
+    height: fit-content;
+    padding: 6px 2px;
+    border-radius: 10px;
+    width: 500px;
+}
+
+.button-yellow-big:hover {
+    background: #f3f58d;
+    border: 2px solid #c4c707;
+}
+
+.yellow-container {
+    display: grid;
+    grid-column: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding-bottom: 10px;
+    padding-top: 25px;
+}
+
+.button-yellow2 {
+    background: linear-gradient(180deg, #ffe600, #fff34b, #fff7ab);
+    border: 2px solid #fff34b;
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    height: fit-content;
+    padding: 6px 2px;
+    border-radius: 10px;
+}
+
+.button-green {
+    background: linear-gradient(180deg, #96d4b8, #23c079);
+    color: #000000;
+    font-weight: 600;
+    font-size: 16px;
+    height: fit-content;
+    padding: 6px 2px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.button-green:hover {
+    background: linear-gradient(180deg, #23c079, #96d4b8) !important;
+    border: 2px solid #d1e7dd !important;
+}
+
+.cycle-input {
+    width: 100%;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    height: 36px;
+}
+
+/* This class can be added to disable the input field */
+.input-field-disabled {
+    cursor: none;
+}
+
+.input-label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.input-field-cycle {
+    height: 20px;
+}
+
+.button-arrow {
+    max-width: 32px;
+    height: 100%;
+}
+
+.arrow-right {
+    transform: rotate(180deg);
+}
+
+.process-buttons {
+    display: flex;
+    height: 34px;
+}
+.process-buttons button {
+    width: 50px; /* Set a fixed width for the button */
+    height: 34px;
+}
+.input-field {
+    height: 34px;
+    width: 110px;
+    margin-right: -5px; /* Adjust the input field width as needed */
+}
+
+.module-actions {
+    display: flex;
+    justify-content: space-between;
+    background: #003274;
+    padding: 4px 20px;
+    margin-top: 40px;
+}
+
+.button-start {
+    background: #40ff96;
+    border: 2px solid #007e3f;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 48px;
+}
+
+.button-start:hover {
+    background: #31fc2a;
+    border: 2px solid #13a500;
+}
+
+.button-settings {
+    max-width: 60px;
+}
+
+.module-window {
+    border: 1px solid black;
+    background: #ffffff;
+}
+
+.module-window .title {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.module-window .all-image {
+    height: 530px;
+    width: 100%;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+.module-windowst {
+    border: 1px solid black;
+    height: 600px;
+    background: #ffffff;
+}
+
+.navbar-title {
+    max-width: fit-content;
+    padding: 8px 100px;
+    align-items: center;
+}
+
+.box {
+    width: 50%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.titles {
+    font-size: 25px;
+    transform: translateX(10rem);
+}
+
+#image-container {
+    display: none;
+}
+.title {
+    position: relative;
+}
+
+.warning {
+    left: 0%;
+    position: absolute;
+}
+
+
+#processStep {
+    background-color: white;
+    width: 75px;
+    text-align: center;
+}
+
+#selectDeskManual {
+    display: none;
+}
+
+.canvas-image {
+    border: 1px solid black;
+    margin: 1rem;
+    display: none;
+}
+
+.port-not-connected {
+    padding: 0 1rem 0 1rem;
+    color: red;
+}
+
+.port-connected {
+    padding: 0 1rem 0 1rem;
+    color: green;
+}
+
+.all-image span {
+    display: inline-block;
+    text-indent: 50%;
+    width: 25%;
+    height: 25%;
+}
+
+.all-image img {
+    width: 200px;
+    height: 60%;
+    object-fit: contain;
+}
+
+.all-image::-webkit-scrollbar {
+    display: none;
+}
+
+.add-border {
+    border: 3px solid black;
+}
+
+#popup-window {
+    position: fixed;
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 2.5;
+    left: 4.5;
+    margin-right: 35px;
+    margin-top: 35px;
+    align-items: center;
+    display: none;
+}
+
+#popup-window ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  
+}
+
+#popup-window ul li button:hover{
+    background-color: #98d8ff;
+}
+
+#popup-window ul li {
+    margin-bottom: 5px; 
+    
+}
+
+#popup-window ul li button {
+    width: calc(100% - 10px); 
+    padding: 5px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+
+#popup-window {
+    width: 126px; 
+    height: 137px; 
+    border-radius: 5px;
+    align-items: center;
+}
+
+
+#edit-pass-window {
+    text-align: center;
+    position: fixed;
+    margin:auto;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 500px; 
+    height: 350px; 
+    display: none;
+}
+
+#edit-pass-window input {
+    width: 200px; /* Take up full width of the grid cell */
+    height : 30px;
+    padding: 6px;
+    margin-top: 7px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+
+  #edit-pass-window select {
+    width: 200px; /* Take up full width of the grid cell */
+    height : 30px;
+    padding: 6px;
+    margin-top: 7px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+
+#edit-pass-window button {
+    width: 200px; /* Full width button */
+    padding:10px;
+    text-align: center;
+    height:max-content;
+    margin-top: 10px; /* Increase margin between inputs and buttons */
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 1;
+    transition: 0.3s;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+  }
+  #edit-pass-window button:hover {opacity: 0.6}
+
+.grid-container-new {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    row-gap: 10px;
+  }
+
+  .grid-item-new{
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  text-align: left;
+  }
+
+#create-user-window{
+    text-align: center;
+    position: fixed;
+    margin:auto;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 500px; 
+    height: 280px; 
+    display: none;
+}
+#create-user-window input{
+    position:relative;
+    width: 200px; /* Take up full width of the grid cell */
+    height : 30px;
+    padding: 6px;
+    margin-top: 7px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+  }
+
+#create-user-window button {
+    width: 200px; /* Full width button */
+    padding:10px;
+    text-align: center;
+    height:max-content;
+    margin-top: 10px; /* Increase margin between inputs and buttons */
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 1;
+    transition: 0.3s;
+    color: white;
+    border: none;
+    
+  }
+  #create-user-window button:hover {opacity: 0.6}
+
+
+#delete-user-window {
+    text-align: center;
+    position: fixed;
+    margin:auto;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 500px; 
+    height: 250px; 
+    display:none;
+}
+
+#delete-user-window select{
+    width: 200px; /* Take up full width of the grid cell */
+    height : 30px;
+    padding: 6px;
+    margin-top: 7px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    margin-bottom: 25px;
+    transform: translateX(29px);
+    text-align: left;
+  }
+
+
+  #delete-user-window button {
+    width: 200px; /* Full width button */
+    padding:10px;
+    text-align: center;
+    height:max-content;
+    margin-top: 10px; /* Increase margin between inputs and buttons */
+    font-size: 15px;
+    font-weight: bold;
+    opacity: 1;
+    transition: 0.3s;
+    color: white;
+    border: none;
+    cursor: pointer;
+    
+  }
+  #delete-user-window button:hover {opacity: 0.6}
+
+  
+.grid-container-new-del {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    row-gap: 10px;
+  }
+
+  .grid-item-new-del{
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-left: 35px;
+  font-size: 15px;
+  text-align: left;
+  padding-bottom: 20px;
+  }
+
+
+table {
+    border-collapse: collapse;
+    width:420px;
+    text-align: center;
+
+  }
+  
+  th, td {
+    border: 1px solid #000000;
+    text-align: left;
+  }
+ 
+  th {
+    background-color: #e0e0e0;
+    color: #585858;
+  }
+  
+  tr {
+    background-color: #ffffff;
+    height:17px;
+  }
+  
+  th:hover {
+    background-color: #aaa; 
+  }
+  
+  td {
+    border-bottom: 1px solid #000000;
+  }
+  
+  td:hover {
+    background-color: #f0f0f0; 
+  }
+  
+  col:nth-child(1) {
+    width: 11%;
+  }
+  
+  col:nth-child(2) {
+    width: 50%; 
+  }
+  
+  col:nth-child(3) {
+    width: 11%; 
+  }
+  
+  col:nth-child(4) {
+    width: 11%; 
+  }
+  
+  col:nth-child(5) {
+    width: 11%; 
+  }
+  
+  col:nth-child(6) {
+    width: 11%; 
+  }
+  
+
+.Table-container {
+max-height: 70px;
+width:440px;
+overflow-y:scroll;
+overflow-x:hidden;
+
+transform: translateX(150px);
+background-color: whitesmoke;
+border: 1px solid #000000;
+}
+
+.center-text {
+    text-align: center;
+  }

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yazaki Guided Terminal Assembly Station</title>
+  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./planning.css" />
+  <body>
+    <div class="main-content">
+      <div class="header">
+        <div class="">
+          <img src="../logo.png" alt="Logo" />
+        </div>
+        <div class="text-center">
+          <h1 id="pageTitle" class="pageTitle"></h1>
+        </div>
+        <div class="actions">
+          <div class="button-container">
+            <div class="row">
+              <button id="buttons1" class="button button-static"></button>
+              <button id="buttons2" class="button button-static"></button>
+            </div>
+            <div class="row">
+              <button id="buttons3" class="button"></button>
+              <button id="buttons4" class="button"></button>
+            </div>
+          </div>
+          <div class="image-container">
+            <button class="user-button">
+              <img src="../user-icon.png" alt="Image" />
+            </button>
+            <p  id="onButton"></p>
+            <p  id="offButton"></p>
+          </div>
+          <div class="close">
+            <button class="close-button">x</button>
+          </div>
+        </div>        
+      </div>
+        </body>
+        </html>
+        
+<div class="module-windowpl">  
+   <div class="grid-container-planning">
+
+     <div class="grid-item-planning" >
+      <h1>Select Line</h1>
+      <div >
+        <ul id="folderList" class="folder-list"></ul> 
+       
+      </div>
+     </div>
+
+     <div class="grid-item-planning">
+      <h1>Select Machine</h1>
+      <ul id="MachineList" class="folder-list"> </ul>
+     </div>
+
+     <div class="grid-item-planning">
+      <h1>Select Process</h1>
+      <div>       
+        <ul id="ProcessList" class="folder-list"></ul> 
+      </div>
+      </div>
+
+     <div class="grid-item-planning">
+      <h1>Select Shift</h1>
+      <div>
+        <ul class="folder-list-shift">
+          <li><input type="radio" name="shift" value="A"><label >A</label></li>
+          <li><input type="radio" name="shift" value="B"><label >B</label></li>
+          <li><input type="radio" name="shift" value="C"><label >C</label></li>
+          <li><input type="radio" name="shift" value="D"><label >D</label></li>
+        </ul>
+      <input type="date" id="selected-date">
+
+      <ul class="folder-list-process">
+        <li><input type="radio" name="process" value="navigator-with-sensor"><label >Nav With Sensor</label></li>
+        <li><input type="radio" name="process" value="navigator-without-sensor"><label >Nav Without Sensor</label></li>
+        <li><input type="radio" name="process" value="bonder"><label >Bonder</label></li>
+      </ul>
+      </div>
+     </div>
+
+<div class="grid-container-planning">
+  <div class="cont">
+  <button onclick=" sendToDatabase()"><img class="itemg" src="../../images/right-arrow.png" width="20px" alt="Button Right"></button>
+  <br>
+<button id="delete-row" disabled><img class="itemg" src="../../images/left-arrow.png"  width="20px" alt="Button Left" ></button>
+</div>
+</div>
+
+     <div class="grid-item-planning">
+      <h1>Planning Details</h1>
+      <div class="Table-container">
+      <table id="dataTable">
+        <colgroup>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th>Date</th>
+            <th>Line Name</th>
+            <th>Process</th>
+            <th>Seq</th>
+            <th>Target</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+     </div>
+   </div>
+
+   <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Enter Sequence Number</p>
+        <input type="number" id="seqInput">
+        <button class="OkButton" id="okBtn">OK</button>
+    </div>
+</div>
+
+<div id="targetModal" class="custom-modal">
+  <div class="custom-modal-content">
+      <span class="close-custom-modal">&times;</span>
+      <p>Enter Target</p>
+      <input type="number" id="targetInput">
+      <button class="OkButton" id="okTargetBtn">OK</button>
+  </div>
+</div>
+
+
+<div id="remarksModal" class="remarks-modal">
+  <div class="remarks-modal-content">
+      <span class="close-remarks-modal">&times;</span>
+      <p>Enter Remarks</p>
+      <input type="text" id="remarksInput">
+      <button class="OkButton" id="okRemarksBtn">OK</button>
+  </div>
+</div>
+
+    <a href="../index.html">     
+    <button style="font-size: 30px; border-radius: 5px; transform: translateX(962px);" class="anim-button" >Close</button></a> 
+</div>
+           
+      <div class="module-actions">
+        <div class="start-action">
+       <button class="button button-start">Start</button>
+         <button class="button-green">Pause</button>
+         <button class="button-yellow">Reset</button> 
+          
+        </div>
+        <div class="settings-action">
+          <button class="button button-settings">    
+          </button>
+        </div>
+      </div>
+  </body>
+<!--   <script src="Processnames.js"></script> -->
+  <script src="Processnames.js"></script>
+  <scipt src="index.js"></scipt>
+  <script src="Planning.js"></script>
+<script>
+
+
+let selectedDate;
+          //FOR POST
+         document.addEventListener('DOMContentLoaded', (event) => {
+            const dateInput = document.getElementById('selected-date');
+            dateInput.addEventListener('change', () => {
+                selectedDate = dateInput.value; // Get the selected date from the input
+                console.log(`Selected date: ${selectedDate}`);
+            });
+        }); 
+
+ let selectedRowId = null; // TO Delete 
+ let selectedRow = null;
+        // TO GET
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const dateInput = document.getElementById('selected-date');
+    const planningTableBody = document.getElementById('dataTable').querySelector('tbody');
+    const deleteButton = document.getElementById('delete-row');
+    deleteButton.disabled = false;
+
+    // Function to format date
+    function formatDate(dateString) {
+        const date = new Date(dateString);
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-based
+        const year = date.getFullYear();
+        return `${day}-${month}-${year}`;
+    }
+
+    // Function to fetch and populate table data
+   
+        fetch(`http://localhost:8000/Planning?date=${selectedDate}`)
+            .then(response => response.json())
+            .then(data => {
+                data.sort((a, b) => b.ID - a.ID);
+                planningTableBody.innerHTML = ''; // Clear existing rows
+                data.forEach((row, index) => {
+                    const newRow = planningTableBody.insertRow();
+                    newRow.insertCell().textContent = index + 1;
+                    newRow.insertCell().textContent = formatDate(row.Date);
+                    newRow.insertCell().textContent = row.LineName;
+                    newRow.insertCell().textContent = row.Process;
+                    newRow.insertCell().textContent = row.Seq;
+                    newRow.insertCell().textContent = row.Target;
+                    newRow.insertCell().textContent = row.Remark;
+
+                    newRow.addEventListener('click', function() {
+                        this.style.backgroundColor = 'red';
+                        deleteButton.disabled = false;
+                        selectedRowId = row.ID;
+                        selectedRow = row;
+                        console.log(`Row with ID ${selectedRowId} was clicked`);
+                    });
+
+                    newRow.addEventListener('contextmenu', function(event) {
+                        event.preventDefault();
+                        this.style.backgroundColor = '';
+                        deleteButton.disabled = true;
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    // Event listener for date input change
+   
+         
+//Delete Start 
+deleteButton.addEventListener('click', () => {
+  if (selectedRowId) {
+    fetch(`http://localhost:8000/Planning/Delete/${selectedRowId}`, {
+      method: 'DELETE',
+    })
+     .then(response => response.json())
+     .then(data => {
+        if (data.success) {
+          //selectedRow.parentNode.removeChild(selectedRow);
+          console.log(`Row with ID ${selectedRowId} deleted successfully`);
+        //  alert("Row deleted Successfully !!");
+          deleteButton.disabled = true;
+        } else {
+          console.error(`Error deleting row with ID ${selectedRowId}:`, data.error);
+        }
+      })
+     .catch(error => console.error(`Error deleting row with ID ${selectedRowId}:`, error));
+  }
+});
+//Delete ends  
+ 
+});
+
+
+function sendToDatabase() {
+  const selectedOptions = {
+        LineName: selectedFolder,
+        System: selectedMachine,
+        Process: selectedFile,
+        Shift: selectedShift,
+        Date: selectedDate,
+    };
+
+    fetch('http://localhost:8000/Planning', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ options: selectedOptions })
+      })
+      .then(response => response.text())
+      .then(data => console.log('Options sent successfully!'))
+      .catch(error => console.error('Error sending options:', error));
+      clearRadioButtons();
+      fetchAndPopulateTable(storedDate);
+ 
+}
+
+
+
+function clearRadioButtons() {
+    const radioList = document.querySelectorAll('input[type="radio"]');
+    radioList.forEach(radio => {
+        radio.checked = false;
+    });
+}
+
+ /* BLOCKS DOUBLE ENTRIES
+ function showSelectedValues() { 
+    // Ensure selectedFolder, selectedMachine, selectedFile, selectedShift, and selectedDate are set correctly
+    if (!selectedFolder || !selectedFile || !selectedShift || !selectedDate) {
+        console.error('Required fields not selected.');
+        return;
+    }
+
+    // Prepare data for the new row
+    const newRowData = {
+        date: selectedDate,
+        lineName: selectedFolder,
+        process: selectedFile,
+        seq: 0, // Default value
+        target: 0, // Default value
+        remarks: '-' // Default value
+    };
+
+    // Get reference to table body
+    const tableBody = document.querySelector('#dataTable tbody');
+
+    // Check if the new row data already exists in the table
+    let duplicateFound = false;
+    for (const row of tableBody.children) {
+        const rowData = {
+            date: row.cells[1].textContent,
+            lineName: row.cells[2].textContent,
+            process: row.cells[3].textContent,
+            seq: parseInt(row.cells[4].textContent),
+            target: parseInt(row.cells[5].textContent),
+            remarks: row.cells[6].textContent
+        };
+
+        // Check if all properties of the new row data match with the current row
+        let matchFound = true;
+        for (const key in newRowData) {
+            if (newRowData[key] !== rowData[key]) {
+                matchFound = false;
+                break;
+            }
+        }
+
+        if (matchFound) {
+            duplicateFound = true;
+            break;
+        }
+    }
+
+    if (!duplicateFound) {
+        // Create new row
+        const newRow = document.createElement('tr');
+
+        // Incremental S.no
+        newRow.innerHTML = `
+            <td>${tableBody.children.length + 1}</td>
+            <td>${newRowData.date}</td>
+            <td>${newRowData.lineName}</td>
+            <td>${newRowData.process}</td>
+            <td id="seq-cell">${newRowData.seq}</td>
+            <td id="target-cell">${newRowData.target}</td>
+            <td id="remarks-cell">${newRowData.remarks}</td>
+        `;
+
+        // Append new row to table
+        tableBody.appendChild(newRow);
+
+        // Clear selected values
+        selectedFolder = null;
+        selectedMachine = null;
+        selectedFile = null;
+        selectedShift = null;
+        selectedDate = null;
+    } else {
+        console.error('Duplicate row found.');
+    }
+    //
+} */
+
+/* function showSelectedValues() {
+
+ 
+    // Ensure selectedFolder, selectedMachine, selectedFile, selectedShift, and selectedDate are set correctly
+    if (!selectedFolder || !selectedFile || !selectedShift || !selectedDate) {
+        console.error('Required fields not selected.');
+        return;
+    }
+
+    // Prepare data for the new row
+    const newRowData = {
+        date: selectedDate,
+        lineName: selectedFolder,
+        process: selectedFile,
+        seq: 0, // Default value
+        target: 0, // Default value
+        remarks: '-' // Default value
+    };
+
+    // Get reference to table body
+    const tableBody = document.querySelector('#dataTable tbody');
+
+    // Create new row
+    const newRow = document.createElement('tr');
+
+    // Incremental S.no
+    newRow.innerHTML = `
+        <td>${tableBody.children.length + 1}</td>
+        <td>${newRowData.date}</td>
+        <td>${newRowData.lineName}</td>
+        <td>${newRowData.process}</td>
+        <td id="seq-cell">${newRowData.seq}</td>
+        <td id="target-cell">${newRowData.target}</td>
+        <td id="remarks-cell">${newRowData.remarks}</td>
+    `;
+
+    // Append new row to table
+    tableBody.appendChild(newRow);
+
+    // Clear selected values
+    selectedFolder = null;
+    selectedMachine = null;
+    selectedFile = null;
+    selectedShift = null;
+    selectedDate = null;
+
+  clearRadioButtons();
+
+}
+
+function clearRadioButtons() {
+    const radioList = document.querySelectorAll('input[type="radio"]');
+    radioList.forEach(radio => {
+        radio.checked = false;
+    });
+    const dateInput = document.getElementById('selected-date');
+    dateInput.value = ''; // Reset the value to empty string
+    selectedDate = null; // Clear the selectedDate variable
+}
+ */
+
+                           /* SEQUENCE NUMBER */
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal');
+    const modalContent = document.querySelector('.modal-content');
+    const seqInput = document.getElementById('seqInput');
+    const okBtn = document.getElementById('okBtn');
+    const tableBody = document.querySelector('#dataTable tbody');
+    let selectedRow;
+
+    // Event listener for table row sequence cell click
+    tableBody.addEventListener('contextmenu', (event) => {
+        if (event.target.matches('#seq-cell')) {
+            selectedRow = event.target.parentElement;
+            modal.style.display = 'block';
+        }
+    });
+
+    // Event listener for OK button in modal
+    okBtn.addEventListener('click', () => {
+        const sequenceNumber = seqInput.value.trim();
+        if (sequenceNumber !== '') {
+            selectedRow.cells[4].textContent = sequenceNumber;
+            modal.style.display = 'none';
+        }
+    });
+
+    // Close modal when close button is clicked
+    modalContent.querySelector('.close').addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close modal when user clicks outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
+
+                                /* TARGET CELL */
+document.addEventListener('DOMContentLoaded', () => {
+    const targetModal = document.getElementById('targetModal');
+    const modalContent = targetModal.querySelector('.custom-modal-content');
+    const targetInput = modalContent.querySelector('#targetInput');
+    const okTargetBtn = modalContent.querySelector('#okTargetBtn');
+    const tableBody = document.querySelector('#dataTable tbody');
+    let selectedRow;
+
+    // Event listener for table row target cell right-click (contextmenu)
+    tableBody.addEventListener('contextmenu', (event) => {
+        if (event.target.matches('#target-cell')) {
+            event.preventDefault(); // Prevent default context menu
+
+            selectedRow = event.target.parentElement;
+            targetModal.style.display = 'block';
+        }
+    });
+
+    // Event listener for OK button in target modal
+    okTargetBtn.addEventListener('click', () => {
+        const targetValue = targetInput.value.trim();
+        if (targetValue !== '') {
+            selectedRow.cells[5].textContent = targetValue; // Update target cell (index 5)
+            targetModal.style.display = 'none';
+        }
+    });
+
+    // Close target modal when close button is clicked
+    modalContent.querySelector('.close-custom-modal').addEventListener('click', () => {
+        targetModal.style.display = 'none';
+    });
+
+    // Close target modal when user clicks outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === targetModal) {
+            targetModal.style.display = 'none';
+        }
+    });
+});
+
+
+                                                   /* REMARKS */
+document.addEventListener('DOMContentLoaded', () => {
+    const remarksModal = document.getElementById('remarksModal');
+    const modalContent = remarksModal.querySelector('.remarks-modal-content');
+    const remarksInput = modalContent.querySelector('#remarksInput');
+    const okRemarksBtn = modalContent.querySelector('#okRemarksBtn');
+    const tableBody = document.querySelector('#dataTable tbody');
+    let selectedRow;
+
+    // Event listener for table row target cell right-click (contextmenu)
+    tableBody.addEventListener('contextmenu', (event) => {
+        if (event.target.matches('#remarks-cell')) {
+            event.preventDefault(); // Prevent default context menu
+
+            selectedRow = event.target.parentElement;
+            remarksModal.style.display = 'block';
+        }
+    });
+
+    // Event listener for OK button in target modal
+    okRemarksBtn.addEventListener('click', () => {
+        const remarksValue = remarksInput.value.trim();
+        if (remarksValue !== '') {
+            selectedRow.cells[6].textContent = remarksValue; // Update target cell (index 5)
+            remarksModal.style.display = 'none';
+        }
+    });
+
+    // Close target modal when close button is clicked
+    modalContent.querySelector('.close-remarks-modal').addEventListener('click', () => {
+        remarksModal.style.display = 'none';
+    });
+
+    // Close target modal when user clicks outside of it
+    window.addEventListener('click', (event) => {
+        if (event.target === remarksModal) {
+            remarksModal.style.display = 'none';
+        }
+    });
+});
+
+           
+</script>
+
+</html>

@@ -1,0 +1,14 @@
+.canvas-outer {
+    height: 50rem;
+    width: 50rem;
+}
+
+#preview {
+    display: flex;
+    justify-content: center;
+}
+
+.display-codes {
+    align-self: center;
+    justify-content: center;
+}

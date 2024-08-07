@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>GTI</title>
+        <link
+            rel="stylesheet"
+            href="../index.css" />
+        <link
+            rel="stylesheet"
+            href="print.css" />
+    </head>
+
+    <body>
+        <div class="header">
+            <h3 id="appname">Guided Terminal Assembly Station</h3>
+            <div id="deskselections">
+                <div id="datetimecard"><b id="shift">Shift-X</b> <b id="user"></b></div>
+                <div id="datetimecard"><b id="currentDate"></b> <b id="currentTime"></b></div>
+            </div>
+            <button
+                onclick="window.close()"
+                class="activeButton"
+                id="close">
+                X
+            </button>
+        </div>
+        <section id="gridsection">
+            <section id="imagemodules">
+                <div id="box">
+                    <div id="boxdiv">
+                        <h6 id="boxheader">Bar Code Image</h6>
+                    </div>
+
+                    <div class="canvas-outer">
+                        <div id="preview">
+                            <div class="display-codes">
+                                <div id="code1"></div>
+                                <div id="displayDate"></div>
+                                <div id="displayTime"></div>
+                            </div>
+                            <canvas
+                                id="barcode"
+                                height="150"
+                                width="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="imagemodules">
+                <div
+                    id="box"
+                    style="margin-right: 10px">
+                    <div id="boxdiv">
+                        <h6 id="boxheader">Desk Selection</h6>
+                        <a href="../index.html">GoHome</a>
+                    </div>
+                    <form
+                        id="form"
+                        class="sidebar">
+                        <p id="portStatus"></p>
+                        <div class="sidebar-items">
+                            <label
+                                for="processName"
+                                class="label">
+                                Process Name
+                            </label>
+                            <select
+                                class="select-desk-input"
+                                id="processName"></select>
+                        </div>
+                        <div class="sidebar-items">
+                            <label
+                                for="datetime"
+                                class="label">
+                                Date
+                            </label>
+                            <input
+                                type="datetime-local"
+                                id="datetime"
+                                class="select-desk-input"
+                                name="selectDeskValue" />
+                        </div>
+                        <div class="sidebar-items">
+                            <label
+                                for="code1Input"
+                                class="label">
+                                Code 1
+                            </label>
+                            <input
+                                type="text"
+                                id="code1Input"
+                                class="select-desk-input" />
+                        </div>
+                        <div>
+                            <button
+                                type="button"
+                                class="activeButton pc-image-config-button"
+                                id="printButton">
+                                Print
+                            </button>
+                            <button
+                                type="button"
+                                class="activeButton pc-image-config-button"
+                                id="previewButton">
+                                Preview
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </section>
+        <script src="../lib/dateTime.js"></script>
+        <script src="print.js"></script>
+    </body>
+</html>

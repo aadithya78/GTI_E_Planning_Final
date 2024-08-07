@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+    </head>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="./index.css" />
+        <script src="https://cdn.jsdelivr.net/npm/sql.js@1.5.0/dist/sql.js"></script>
+    <body>
+        <div class="main-content">
+            <div class="header">
+                <div class="">
+                    <img
+                        src="logo.png"
+                        id="logo"
+                        alt="Logo" />
+                </div>
+                <div class="text-center">
+                    <h1
+                        id="pageTitle"
+                        class="pageTitle"></h1>
+                </div>
+                <div class="actions">
+                    <div class="button-container">
+                        <div class="row">
+                            <button
+                                id="currentDate"
+                                class="button button-static"></button>
+                            <button
+                                id="currentTime"
+                                class="button button-static"></button>
+                        </div>
+                        <div class="row">
+                            <button
+                                id="user"
+                                class="button"></button>
+                            <button
+                                id="shift-button"
+                                class="button">
+                                Shift -
+                                <span id="shift"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <button id="popup-link" class="user-button"  onclick= "window.location.href='./admin/login.html'">
+                            <img
+                                src="user-icon.png"
+                                id="userImage"
+                                alt="Image" />
+                        </button>
+                    </div>
+                    <div class="close">
+                        <button
+                            onclick="window.close()"
+                            id="close"
+                            class="close-button">
+                            x
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="grid-container">
+                    <div class="navbar-column">
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Select Desk</div>
+                            <div class="navbar-value">
+                                <input
+                                    id="selectDeskScanner"
+                                    class="dropdown"
+                                    name="selectDeskValue" />
+                                <select
+                                    id="selectDeskManual"
+                                    class="dropdown"></select>
+                            </div>
+                        </div>
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Warning Alarm</div>
+                            <div class="navbar-value">
+                                <button
+                                    class="button-green"
+                                    id="warningAlarmOnButton">
+                                    ON
+                                </button>
+                                <button
+                                    class="button-red"
+                                    id="warningAlarmOffButton">
+                                    OFF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="navbar-column">
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Process Step</div>
+                            <div class="navbar-value">
+                                <span
+                                    class="input-field"
+                                    id="processStep"
+                                    >0</span
+                                >
+                                <div class="process-buttons">
+                                    <button
+                                        id="previousButton"
+                                        class="button-arrow arrow-left">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="#000000"
+                                            width="100%"
+                                            height="100%"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z" />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        id="nextButton"
+                                        class="button-arrow arrow-right">
+                                        <span style="font-size: 22px">&#11207;</span>
+                                        <path
+                                            d=" 0 0m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 1.645z" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">CyJ Movement</div>
+                            <div class="navbar-value">
+                                <button
+                                    class="button-green"
+                                    id="cyjMovementEnableButton">
+                                    Enable
+                                </button>
+                                <button
+                                    class="button-red"
+                                    id="cyjMovementDisableButton">
+                                    Disable
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="navbar-column">
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Desk Selection</div>
+                            <div class="navbar-value">
+                                <button
+                                    class="button-green"
+                                    id="selectDeskScannerButton">
+                                    Scanner
+                                </button>
+                                <button
+                                    class="button-red"
+                                    id="selectDeskManualButton">
+                                    Manual
+                                </button>
+                            </div>
+                        </div>
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Time Elapsed</div>
+                            <div class="navbar-value">
+                                <button
+                                    class="button-green"
+                                    id="timeElapsedEnableButton">
+                                    Enable
+                                </button>
+                                <button
+                                    class="button-red"
+                                    id="timeElapsedDisableButton">
+                                    Disable
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="grid-container"
+                    style="display: grid; row-gap: 20px">
+                    <div class="navbar-column">
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Count</div>
+                            <div class="navbar-value">
+                                <input
+                                    id="expectedCount"
+                                    type="text"
+                                    placeholder="-"
+                                    disabled
+                                    class="input-field"
+                                    style="height: 25px" />
+                                <input
+                                    id="actualCount"
+                                    type="text"
+                                    placeholder="-"
+                                    disabled
+                                    class="input-field"
+                                    style="height: 25px" />
+                            </div>
+                        </div>
+                        <div class="navbar-item">
+                            <div class="navbar-key button-yellow2">Cycle Time</div>
+                            <div class="navbar-value">
+                                <div class="cycle-input">
+                                    <input
+                                        id="targetCycleTime"
+                                        type="text"
+                                        placeholder="-"
+                                        disabled
+                                        class="input-field input-field-cycle"
+                                        style="height: 25px" />
+                                </div>
+                                <div class="cycle-input">
+                                    <input
+                                        id="actualCycleTime"
+                                        type="text"
+                                        disabled
+                                        placeholder="-"
+                                        class="input-field input-field-cycle"
+                                        style="height: 25px" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="target">
+                    <span
+                        class="input-label"
+                        style="color: white; transform: translateX(300%)"
+                        >Target</span
+                    >
+                    <span
+                        class="input-label"
+                        style="color: white; transform: translateX(460%)"
+                        >Actual</span
+                    >
+                </div>
+            </div>
+            <div class="module-window">
+                <div class="title"  >
+                    <div
+                        class="navbar-key navbar-title titles button-yellow2"
+                        style="transform: translateX(-0%)">
+                        Modules to be Installed                      
+                    </div>
+                    <p id="portStatus"></p>    
+                   <div class="Table-container">
+                    <style>
+                        .sequence-row {
+                          background-color: white; /* Default background */
+                        }
+                      
+                        .sequence-row.active {
+                          background-color: yellow; /* Highlight active row */
+                        }
+                      
+                        .sequence-row.completed {
+                          background-color: rgb(1, 165, 1); /* Highlight completed row */
+                        }
+                      </style>
+                        <table class="center-text" id="index-planning-data">
+                            <colgroup>
+                              <col>
+                              <col>
+                              <col>
+                              <col>
+                              <col>
+                              <col>   
+                            </colgroup>
+                            <thead>
+                              <tr class="center-text">
+                                <th class="center-text">S.no</th>
+                                <th class="center-text">Process</th>
+                                <th class="center-text">Seq</th>
+                                <th class="center-text">Target</th>
+                                <th class="center-text">Actual</th>
+                                <th class="center-text">Difference</th>
+                              </tr>
+                            </thead>
+                            <tbody class="center-text">
+                                                                
+                            </tbody>
+                          </table>
+                        </div>
+                </div>            
+                <div
+                    class="all-image"
+                    id="allImage"></div>
+                <canvas
+                    id="canvas"
+                    width="1660"
+                    height="550"
+                    class="canvas-image"></canvas>
+            </div>
+        </div>
+        <div class="module-actions">
+            <div class="start-action">
+                <button
+                    id="startButton"
+                    class="button button-start">
+                    Start
+                </button>
+                <button
+                    id="pauseButton"
+                    class="button-green">
+                    Pause
+                </button>
+                <button
+                    id="resetButton"
+                    class="button-yellow">
+                    Reset
+                </button>
+                <button
+                    id="saveButton"
+                    class="button-yellow">
+                    Save
+                </button>
+            </div>
+            <p
+                style="color: white"
+                id="instructions"></p>
+            <div class="settings-action">
+                <button
+                    id="settingsButton"
+                    class="button button-settings">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100%"
+                        height="100%"
+                        viewBox="0 0 24 24"
+                        fill="none">
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M14.2788 2.15224C13.9085 2 13.439 2 12.5 2C11.561 2 11.0915 2 10.7212 2.15224C10.2274 2.35523 9.83509 2.74458 9.63056 3.23463C9.53719 3.45834 9.50065 3.7185 9.48635 4.09799C9.46534 4.65568 9.17716 5.17189 8.69017 5.45093C8.20318 5.72996 7.60864 5.71954 7.11149 5.45876C6.77318 5.2813 6.52789 5.18262 6.28599 5.15102C5.75609 5.08178 5.22018 5.22429 4.79616 5.5472C4.47814 5.78938 4.24339 6.1929 3.7739 6.99993C3.30441 7.80697 3.06967 8.21048 3.01735 8.60491C2.94758 9.1308 3.09118 9.66266 3.41655 10.0835C3.56506 10.2756 3.77377 10.437 4.0977 10.639C4.57391 10.936 4.88032 11.4419 4.88029 12C4.88026 12.5581 4.57386 13.0639 4.0977 13.3608C3.77372 13.5629 3.56497 13.7244 3.41645 13.9165C3.09108 14.3373 2.94749 14.8691 3.01725 15.395C3.06957 15.7894 3.30432 16.193 3.7738 17C4.24329 17.807 4.47804 18.2106 4.79606 18.4527C5.22008 18.7756 5.75599 18.9181 6.28589 18.8489C6.52778 18.8173 6.77305 18.7186 7.11133 18.5412C7.60852 18.2804 8.2031 18.27 8.69012 18.549C9.17714 18.8281 9.46533 19.3443 9.48635 19.9021C9.50065 20.2815 9.53719 20.5417 9.63056 20.7654C9.83509 21.2554 10.2274 21.6448 10.7212 21.8478C11.0915 22 11.561 22 12.5 22C13.439 22 13.9085 22 14.2788 21.8478C14.7726 21.6448 15.1649 21.2554 15.3694 20.7654C15.4628 20.5417 15.4994 20.2815 15.5137 19.902C15.5347 19.3443 15.8228 18.8281 16.3098 18.549C16.7968 18.2699 17.3914 18.2804 17.8886 18.5412C18.2269 18.7186 18.4721 18.8172 18.714 18.8488C19.2439 18.9181 19.7798 18.7756 20.2038 18.4527C20.5219 18.2105 20.7566 17.807 21.2261 16.9999C21.6956 16.1929 21.9303 15.7894 21.9827 15.395C22.0524 14.8691 21.9088 14.3372 21.5835 13.9164C21.4349 13.7243 21.2262 13.5628 20.9022 13.3608C20.4261 13.0639 20.1197 12.558 20.1197 11.9999C20.1197 11.4418 20.4261 10.9361 20.9022 10.6392C21.2263 10.4371 21.435 10.2757 21.5836 10.0835C21.9089 9.66273 22.0525 9.13087 21.9828 8.60497C21.9304 8.21055 21.6957 7.80703 21.2262 7C20.7567 6.19297 20.522 5.78945 20.2039 5.54727C19.7799 5.22436 19.244 5.08185 18.7141 5.15109C18.4722 5.18269 18.2269 5.28136 17.8887 5.4588C17.3915 5.71959 16.7969 5.73002 16.3099 5.45096C15.8229 5.17191 15.5347 4.65566 15.5136 4.09794C15.4993 3.71848 15.4628 3.45833 15.3694 3.23463C15.1649 2.74458 14.7726 2.35523 14.2788 2.15224ZM12.5 15C14.1695 15 15.5228 13.6569 15.5228 12C15.5228 10.3431 14.1695 9 12.5 9C10.8305 9 9.47716 10.3431 9.47716 12C9.47716 13.6569 10.8305 15 12.5 15Z"
+                            fill="#1C274C" />
+                    </svg>
+                </button>
+            </div>
+            <div id="popup-window">
+                <ul>
+                    <li><button id="edit-password-link">Edit Password</button></li>
+                    <li><button id="create-user-link">Create User</button></li>
+                    <li><button id="delete-user-link">Delete User</button></li>
+                    <li><button id="close-button">Close</button></li>
+                </ul>
+            </div>
+
+            <div id="edit-pass-window">          
+                <h1 style="font-size: large; font-weight: 800;">Edit Password</h1>
+               <div class="grid-container-new"> 
+               <p class="grid-item-new" >Select User</p> 
+                <select class="grid-item-new" id="user-select-update"><ul id="usernames-list-update"></ul></select>  
+                <p class="grid-item-new" >Old Password </p>
+                <input class="grid-item-new" type="password" id="old-pass" placeholder="Enter Old Password">
+                <p class="grid-item-new">New Password</p>
+                <input class="grid-item-new" type="password" id="password-update" placeholder="Enter New Password">
+                <p class="grid-item-new">Re-Enter New Password</p>
+                <input class="grid-item-new" type="password" id="confirmPassword-update" placeholder="Re-Enter New Password">
+                <button class="grid-item-new" style="background-color: #4CAF50; " id="update-pass">Update</button>
+                <button class="grid-item-new" id="edit-pass-close" style="background-color: red;">Close</button> </div>
+             
+         </div>
+
+         <div id="create-user-window">
+            <h1 style="font-size: large; font-weight: 800;">Create New User</h1>
+            <form id=" form_id ">
+            <div class="grid-container-new"> 
+             <p class="grid-item-new">User Name</p>
+             <input id="username" class="grid-item-new" type="text" placeholder="Enter User Name">
+             <p class="grid-item-new">Password</p>
+             <input id="password" class="grid-item-new" type="password" placeholder="Enter Password">
+             <p class="grid-item-new">Re-Enter Password</p>
+             <input id="confirmPassword" class="grid-item-new" type="password" placeholder="Re-Enter Password">
+            </form>
+             <button id="create-user" class="grid-item-new" style="background-color: #4CAF50;" >Update</button>
+             <button class="grid-item-new" id="create-user-close" style="background-color: red;" >Close</button> 
+            </div>
+         </div>
+         
+             <div id="delete-user-window">
+             <h1 style="font-size: large; font-weight: 800;">Delete User</h1>
+             <div class="grid-container-new-del" id="usernamesContainer"> 
+             <p class="grid-item-new-del" >Select User</p> <select class="grid-item-new-del" id="user-select"><ul id="usernames-list"></ul></select>
+             </div>
+             <button id="delete-user" class="grid-item-new" style="background-color: #4CAF50;" >Delete</button>
+             <button class="grid-item-new" id="delete-user-close" style="background-color: red;">Close</button>         
+            </div>
+                        
+              </div>
+        </div>            
+        </div>   
+        <script src="lib/onLoad.js"></script>
+        <script src="serialportWorkflow.js"></script>
+        <script src="buttons.js"></script>
+        <script src="./actions/end.js"></script>
+        <script>
+
+/* fetch('http://localhost:8000/Planning/indexTable')
+  .then(response => response.json())
+  .then(data => {
+    const sortedData = data.sort((a, b) => {
+      if (a.Seq === b.Seq) {
+        return 0;
+      } else if (a.Seq < b.Seq) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+    const shiftValue = sortedData[0].Shift; // Assuming the shift value is in the first element
+    document.getElementById('shift').textContent = shiftValue;
+  }); */
+
+//For Table 
+
+ const indexPlanningData = document.getElementById('index-planning-data').querySelector('tbody');
+ function updateTable() {
+  fetch(`http://localhost:8000/Planning/indexTable`)
+    .then(response => response.json())
+    .then(data => {
+      //data.sort((a, b) => b.ID - a.ID);
+      data.sort((a, b) => {
+        if (a.Seq === b.Seq) {
+          return 0;
+        } else if (a.Seq < b.Seq) {
+          return -1;
+        } else {
+          return 1;
+        }
+      });
+
+      indexPlanningData.innerHTML = ''; // Clear existing rows
+      data.forEach((row, index) => {
+        const newRow = indexPlanningData.insertRow();
+
+        newRow.classList.add('sequence-row'); // Add class for styling
+        newRow.dataset.seq = row.Seq; // Add data attribute for sequence
+        newRow.dataset.target = row.Target;
+
+        newRow.id = `row-${row.ID}`; // Set unique ID for each row
+        newRow.dataset.id = row.ID; // Store ID in a data attribute
+
+        newRow.insertCell().textContent = index + 1;
+        newRow.cells[newRow.cells.length - 1].style.textAlign = 'center';
+        newRow.insertCell().textContent = row.Process;
+        newRow.cells[newRow.cells.length - 1].style.textAlign = 'center';
+        newRow.insertCell().textContent = row.Seq;
+        newRow.cells[newRow.cells.length - 1].style.textAlign = 'center';
+        newRow.insertCell().textContent = row.Target;
+        newRow.cells[newRow.cells.length - 1].style.textAlign = 'center';
+        newRow.insertCell().textContent = row.Actual;
+        newRow.cells[newRow.cells.length - 1].style.textAlign = 'center';
+        newRow.insertCell().textContent = 0;
+        newRow.cells[newRow.cells.length - 1].style.textAlign = 'center';
+
+      const firstRow = indexPlanningData.querySelector('.sequence-row');
+      if (firstRow) {
+        firstRow.classList.add('active');
+        document.getElementById('expectedCount').value = parseInt(firstRow.dataset.target);
+        console.log("The value of First row Table");
+        console.log(parseInt(firstRow.dataset.target));
+      }     
+      });
+    });
+}
+
+updateTable();
+            //Right Click and Display List 
+            var popupLink = document.getElementById("popup-link");
+            var popupWindow = document.getElementById("popup-window");
+            var closeButton = document.getElementById("close-button");
+            popupLink.addEventListener("contextmenu", function(event) {
+              event.preventDefault();
+              popupWindow.style.display = "block";       
+            });
+
+            closeButton.addEventListener("click", function() {
+              popupWindow.style.display = "none";
+            });
+           window.addEventListener("click", function(event) {
+    if (event.target != popupLink && event.target != popupWindow && event.target != closeButton) {
+      popupWindow.style.display = "none"; // Hide the popup window
+    }
+  });
+
+           //edit password 
+           var editPasswordLink = document.getElementById("edit-password-link");
+           var editpassWindow = document.getElementById("edit-pass-window");
+           var editpassClose = document.getElementById("edit-pass-close");
+           editPasswordLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            editpassWindow.style.display = "block";
+           });
+           editpassClose.addEventListener("click", function(){
+           editpassWindow.style.display = "none";
+           });   
+           
+           var CreateuserLink = document.getElementById("create-user-link");
+           var CreateuserWindow = document.getElementById("create-user-window");
+           var CreateuserClose = document.getElementById("create-user-close");
+           CreateuserLink.addEventListener("click", function(event){
+            event.preventDefault();
+            CreateuserWindow.style.display = "block";
+           });
+           CreateuserClose.addEventListener("click", function(){
+            CreateuserWindow.style.display = "none";
+           });
+           
+           var DeleteuserLink = document.getElementById("delete-user-link");
+           var DeleteuserWindow = document.getElementById("delete-user-window");
+           var DeleteuserClose = document.getElementById("delete-user-close");
+           DeleteuserLink.addEventListener("click", function(event){
+            event.preventDefault();
+            DeleteuserWindow.style.display = "block";
+           });
+           DeleteuserClose.addEventListener("click", function(){
+            DeleteuserWindow.style.display = "none";
+           });
+          
+ // Function to fetch and populate usernames
+
+//API Fetch 
+       /*    fetch('/api/users')
+            .then(response => response.json())
+            .then(data => {
+                const usernames = data.usernames;
+
+                // Display usernames in a list
+                const usernamesList = document.getElementById('usernames-list');
+                usernames.forEach(username => {
+                    const li = document.createElement('li');
+                    li.textContent = username;
+                    usernamesList.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching usernames:', error);
+                alert('Failed to fetch usernames. Please try again later.');
+            });
+
+ */
+
+
+ 
+           // script.js
+ /*          document.addEventListener('DOMContentLoaded', () => {
+            const createUserButton = document.getElementById('create-user');
+            const createUserCloseButton = document.getElementById('create-user-close');
+            
+            createUserButton.addEventListener('click', async () => {
+                const username = document.getElementById('username').value.trim();
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (!username || !password || !confirmPassword) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+                
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match.');
+                    return;
+                }
+                
+                try {
+                    const response = await fetch('/api/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ username, password })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to create user.');
+                    }
+
+                    alert('User created successfully!');
+                    // Optionally clear input fields or perform any other action upon success
+                    document.getElementById('username').value = '';
+                    document.getElementById('password').value = '';
+                    document.getElementById('confirmPassword').value = '';
+                } catch (error) {
+                    console.error('Error creating user:', error);
+                    alert('An error occurred. Please try again.');
+                }
+            });
+            
+            createUserCloseButton.addEventListener('click', () => {
+                document.getElementById('create-user-window').style.display = 'none';
+            });
+        });
+
+ */        
+          </script> 
+          <script src="index.js"> </script>
+          <script src="./server/createDeleteuser.js"></script>
+          <script src="./server/index.js"> </script>
+          <scipt src="./database/index.js"></scipt>
+    </body>
+</html>

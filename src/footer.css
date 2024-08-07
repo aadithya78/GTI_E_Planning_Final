@@ -1,0 +1,21 @@
+.footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--nav-bar-grey);
+    color: white;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 5vh;
+}
+
+.footer-button {
+    border: none;
+    color: green;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+}
