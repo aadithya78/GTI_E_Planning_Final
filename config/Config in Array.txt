@@ -1,0 +1,170 @@
+[
+  {
+    'SYSTEM SETTINGS': 'Total Connectors',
+    __EMPTY_3: 4,
+    __EMPTY_5: 'Bin Settings',
+    __EMPTY_8: 'COM SETTINGS',
+    __EMPTY_12: 'BARCODE PRINT',
+    __EMPTY_13: 2,
+    __EMPTY_14: 'SERIAL NUMBER 6 DIGIT',
+    __EMPTY_15: 1
+  },
+  {
+    'SYSTEM SETTINGS': 'S.No',
+    __EMPTY: 'Connector',
+    __EMPTY_1: 'ID',
+    __EMPTY_2: 'Total Pin',
+    __EMPTY_3: 'NAVIGATION',
+    __EMPTY_5: 'Name',
+    __EMPTY_6: 'Count',
+    __EMPTY_8: 'PORT',
+    __EMPTY_9: 6,
+    __EMPTY_14: 'SERIAL NUMBER 5 DIGIT',
+    __EMPTY_15: 2
+  },
+  {
+    'SYSTEM SETTINGS': 1,
+    __EMPTY: 'CON-1',
+    __EMPTY_1: 1,
+    __EMPTY_2: 40,
+    __EMPTY_3: 1,
+    __EMPTY_5: 'BIN-A',
+    __EMPTY_6: 26,
+    __EMPTY_8: 'PARITY',
+    __EMPTY_9: 'NONE',
+    __EMPTY_14: 'UTHRAKAND',
+    __EMPTY_15: 3
+  },
+  {
+    'SYSTEM SETTINGS': 2,
+    __EMPTY: 'CON-2',
+    __EMPTY_1: 2,
+    __EMPTY_2: 40,
+    __EMPTY_3: 1,
+    __EMPTY_5: 'BIN-B',
+    __EMPTY_6: 25,
+    __EMPTY_8: 'LINE NAME',
+    __EMPTY_9: 'X445-FRONT'
+  },
+  {
+    'SYSTEM SETTINGS': 3,
+    __EMPTY: 'CON-3',
+    __EMPTY_1: 3,
+    __EMPTY_2: 96,
+    __EMPTY_3: 1,
+    __EMPTY_5: 'BIN-C',
+    __EMPTY_6: 26,
+    __EMPTY_8: 'PRINTER',
+    __EMPTY_9: 'DISABLE',
+    __EMPTY_10: 'ENABLE / DISABLE'
+  },
+  {
+    'SYSTEM SETTINGS': 4,
+    __EMPTY: 'CON-4',
+    __EMPTY_1: 4,
+    __EMPTY_2: 96,
+    __EMPTY_3: 1,
+    __EMPTY_5: 'BIN-D',
+    __EMPTY_6: 26,
+    __EMPTY_8: 'CHECK CONN',
+    __EMPTY_9: 'ENABLE'
+  },
+  {
+    'SYSTEM SETTINGS': 9,
+    __EMPTY: 'CON-5',
+    __EMPTY_2: 96,
+    __EMPTY_3: 1,
+    __EMPTY_5: 'S-STICK',
+    __EMPTY_6: 20,
+    __EMPTY_8: 'TARGET QTY',
+    __EMPTY_9: 1
+  },
+  {
+    'SYSTEM SETTINGS': 10,
+    __EMPTY: 'CON-6',
+    __EMPTY_2: 96,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'START BUTTON',
+    __EMPTY_9: 'ENABLE'
+  },
+  {
+    'SYSTEM SETTINGS': 11,
+    __EMPTY: 'CON-7',
+    __EMPTY_2: 96,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'LINE NAME',
+    __EMPTY_9: 'LINE1',
+    __EMPTY_10: 'LINE1 / SERVER'
+  },
+  {
+    'SYSTEM SETTINGS': 12,
+    __EMPTY: 'CON-8',
+    __EMPTY_2: 96,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'SHIFT',
+    __EMPTY_9: 4
+  },
+  {
+    'SYSTEM SETTINGS': 13,
+    __EMPTY: 'CON-9',
+    __EMPTY_2: 96,
+    __EMPTY_8: 'A',
+    __EMPTY_9: 16,
+    __EMPTY_10: 40
+  },
+  {
+    'SYSTEM SETTINGS': 14,
+    __EMPTY: 'CON-10',
+    __EMPTY_2: 96,
+    __EMPTY_8: 'B',
+    __EMPTY_9: 17,
+    __EMPTY_10: 12
+  },
+  {
+    'SYSTEM SETTINGS': 5,
+    __EMPTY: 'E-CON-1',
+    __EMPTY_1: 5,
+    __EMPTY_2: 20,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'C',
+    __EMPTY_9: 17,
+    __EMPTY_10: 27
+  },
+  {
+    'SYSTEM SETTINGS': 6,
+    __EMPTY: 'E-CON-2',
+    __EMPTY_1: 5,
+    __EMPTY_2: 20,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'D',
+    __EMPTY_9: 19,
+    __EMPTY_10: 2
+  },
+  {
+    'SYSTEM SETTINGS': 7,
+    __EMPTY: 'E-CON-3',
+    __EMPTY_1: 5,
+    __EMPTY_2: 20,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'APP TYPE',
+    __EMPTY_9: 'navigator_with_sensor',
+    __EMPTY_12: 'bonder'
+  },
+  {
+    'SYSTEM SETTINGS': 8,
+    __EMPTY: 'E-CON-4',
+    __EMPTY_1: 5,
+    __EMPTY_2: 20,
+    __EMPTY_3: 1,
+    __EMPTY_8: 'TITLE',
+    __EMPTY_9: 'vsc',
+    __EMPTY_12: 'navigator_with_sensor'
+  },
+  {
+    __EMPTY_8: 'IMAGE-left',
+    __EMPTY_9: 'Red.jpg',
+    __EMPTY_12: 'navigator_without_sensor'
+  },
+  { __EMPTY_8: 'IMAGE-RIGHT', __EMPTY_9: 'Red.jpg' },
+  { __EMPTY_8: 'LOGIN-IMAGE', __EMPTY_9: 'Red.jpg' }
+]
