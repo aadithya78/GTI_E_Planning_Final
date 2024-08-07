@@ -1,0 +1,57 @@
+{
+  "name": "gti",
+  "description": "gti application",
+  "version": "0.0.1",
+  "main": "./src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MuPhile-labs/gti.git"
+  },
+  "author": "AbhinavAchha <achhaabhinav@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "rebuild": "electron-rebuild",
+    "lint": "eslint . --fix",
+    "build": "electron-packager . gti --platform=win32 --overwrite --asar --extra-resource= ./src/database/planning.css",
+    "start": "electron --trace-warnings --enable-logging . ",
+    "test": "electron --trace-warnings --enable-logging ./src/test/index.js",
+    "format": "prettier --write '**/*.{js,css,html}'",
+    "server2": "nodemon src/database/PlanningDB.js",
+    "begin": "concurrently \"npm start\" \"npm run server2\" "
+  },
+  "dependencies": {
+    "@electron/remote": "2.0.10",
+    "cors": "^2.8.5",
+    "electron-prompt": "^1.7.0",
+    "express": "^4.18.1",
+    "html2canvas": "^1.4.1",
+    "image-size": "^1.0.1",
+    "jsbarcode": "^3.11.5",
+    "jspdf": "^2.5.1",
+    "msnodesqlv8": "^4.2.1",
+    "mssql": "^11.0.0",
+    "pdf-to-printer": "^5.3.0",
+    "readline-sync": "^1.4.10",
+    "serialport": "^11.0.0",
+    "sqlite3": "^5.0.8",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "25.3.0",
+    "electron-packager": "17.1.1",
+    "electron-rebuild": "^3.2.9",
+    "electron-reload": "2.0.0-alpha.1",
+    "eslint": "8.44.0",
+    "eslint-plugin-prettier": "5.0.0",
+    "nodemon": "^3.1.4",
+    "prettier": "3.0.0"
+  },
+  "packageManager": "yarn@3.6.1",
+  "productName": "gti",
+  "bugs": {
+    "url": "https://github.com/MuPhile-labs/gti/issues"
+  },
+  "homepage": "https://github.com/MuPhile-labs/gti#readme",
+  "keywords": []
+}
